@@ -4,11 +4,17 @@
 // Author: Sarah Perry
 
 
+// initialize variables
+
 let num;
 let str;
 let myNum;
+let myNum2; 
 let myString;
 let myString2;
+let fileName;
+let myFileName;
+
 
 // 1.	Write a JavaScript function that reverse a number.
 // Sample Data and output:
@@ -37,25 +43,12 @@ console.log(`2) Alphabetized string: ${alphabetizeString(myString)} (original st
 
 // 3.	Write a JavaScript function to get the extension of a filename.
 
-let fileName;
-let myFileName;
-
-// myFileName = 'file.with.fullstops.pdf'
-// const getExtension2 = (fileName) => {
-//     const index = fileName.lastIndexOf('.');
-//     if (index !== -1) {
-//         return fileName.slice(index +1);
-//     }
-//     return 'No extension was provided'
-// }; 
-
 myFileName = 'file.with.fullstops.pdf'
 const getExtension = (fileName) => {
     const index = fileName.lastIndexOf('.');
     let extension = (index !== -1) ? fileName.slice(index +1) : 'No extension was provided';
     return extension;
 }; 
-
 
 console.log(`3) extension: ${getExtension(myFileName)} (filename: ${myFileName})\n`); // Output: ".pdf"
 
@@ -74,9 +67,9 @@ let day = date.getDate().toString().padStart(2, '0');
 return [year, month, day]
 }
 
-
 const dateDMY = dateArray => `${dateArray[2]}-${dateArray[1]}-${dateArray[0]}`;
 const dateMDY = dateArray => `${dateArray[1]}-${dateArray[2]}-${dateArray[0]}`;
+
 console.log(`4 a) dd-mm-yyyy format: ${dateDMY(getDateArray(today))}`); // Output: "01-09-2024"
 console.log(`  b) mm-dd-yyyy format: ${dateMDY(getDateArray(today))}\n`); // Output: "09-01-2024"
 
@@ -88,22 +81,9 @@ console.log(`  b) mm-dd-yyyy format: ${dateMDY(getDateArray(today))}\n`); // Out
 myString = 'sarah'
 myString2 = 123
 
-// const capitalize2 = str => {
-//     if (!str) return ''; // Handle empty string or falsy values like null, undefined, etc.
-//     if (typeof str !== 'string') return String(str); // Convert non-string to string
-//     if (/^[a-zA-Z]/.test(str[0])){ // Check if the first character is alphabetic
-//         return str[0].toUpperCase() + str.slice(1);}
-//     return str;
-// };
-
-
-// console.log(capitalize2(myString2));
-
-
 const capitalize = str => (/^[a-zA-Z]/.test(str[0])) ? str[0].toUpperCase() + str.slice(1) : str;
 
 console.log(`5) Capitalized String: ${capitalize(myString)} (original string: ${myString})\n`);
-
 
 
 // 6.	Write a function in JavaScript “checkPeriod(str)” that returns “contain period” 
@@ -111,18 +91,6 @@ console.log(`5) Capitalized String: ${capitalize(myString)} (original string: ${
 
 myString = 'file.with.fullstops.pdf'
 myString2 = 'noperiod'
-
-// const checkPeriod1 = str => {
-//     const index = str.lastIndexOf('.');
-//     if (index !== -1) {
-//         return 'contains period';
-//     }
-//     return 'no period'
-// }; 
-
-// console.log(checkPeriod1(myString));
-// console.log(checkPeriod1(myString2));
-
 
 const checkPeriod2 = str => str.includes('.') ? 'contains period' : 'no period';
 
@@ -134,7 +102,7 @@ console.log(`6 b) Check ${myString2}: ${checkPeriod2(myString2)}\n`); // Output:
 // For ex, if num is 22 then the function returns 22nd, if num is 23, returns 23rd and so on.
 // If user does not provide a parameter, then it should return without anything.
 
-let myNum2; 
+
 myNum = 112
 myNum2 = 122
 
