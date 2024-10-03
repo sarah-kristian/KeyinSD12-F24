@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+
+/* Handle image credit */
+.image-container {
+    position: relative;
+    display: inline-block;
+  }
+
+  .image-credit {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 5px;
+    font-size: 12px;
+    display: none;
+  }
+
+  .image-container:hover .image-credit {
+    display: block;
+  }
+
+/*   Handle links */
+  a {
+    color: inherit; /* This makes the link inherit the color of the surrounding text */
+    text-decoration: none;
+  }
+  a.card-link {
+    color: #0000EE; /* Blue color for card links */
+    text-decoration: none; /* Removes underline from card links */
+  }
+  a:hover {
+    color: #0000EE; 
+    text-decoration: none;
+
+  }
+
+ 

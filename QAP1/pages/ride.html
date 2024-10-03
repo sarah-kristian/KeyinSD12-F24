@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <title>Jett Crew</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <!-- fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400&family=Source+Serif+4:ital,wght@0,600;1,600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- my CSS -->
+    <link rel="stylesheet" href="/style/styles.css" />
+
+    <!-- leaftlet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <!-- HEADER -->
+      <header class="bg-light py-3">
+        <nav class="navbar navbar-expand-md navbar-light container">
+          <a class="navbar-brand" href="#">Jett Crew</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="collapse navbar-collapse justify-content-end"
+            id="navbarNav"
+          >
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="/index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/pages/learn.html">Learn</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="/pages/ride.html">Ride</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/pages/explore.html">Explore</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+
+      <!-- MAIN BODY -->
+      <main class="container my-5">
+        <section>
+          <div class="row">
+            <div class="col-sm-12">
+              <h2>Ride <small>with confidence</small></h2>
+            </div>
+            <!-- Card: SIGNALS -->
+            <div class="col-md-6 col-lg-4">
+              <p>
+                Riding with confidence means knowing how to take care of your
+                bike and staying safe on the road.
+              </p>
+              <div id="tips">
+                <h5>Tips from a previous learner:</h5>
+                <audio controls id="audioBrakes">
+                  <source src="/audio/Brakes.m4a" type="audio/mp4" />
+                  Your browser does not support the audio element.
+                </audio>
+                <audio controls id="audioGears">
+                  <source src="/audio/Gears.m4a" type="audio/mp4" />
+                  Your browser does not support the audio element.
+                </audio>
+              </div>
+            </div>
+
+            <!-- Card: SIGNALS -->
+            <div class="col-md-6 col-lg-4">
+              <div id="signals" class="card md-3">
+                <div class="image-container">
+                  <img
+                    class="d-block w-100 rounded"
+                    src="/images/mark-stosberg-kwymB90JZTE-unsplash.jpg"
+                    alt="Photo by Mark Stosberg on Unsplash"
+                  />
+                  <div class="image-credit">
+                    Photo by
+                    <a
+                      href="https://unsplash.com/@markstos?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+                      >Mark Stosberg</a
+                    >
+                    on
+                    <a
+                      href="https://unsplash.com/photos/man-in-red-shirt-riding-on-motorcycle-on-road-during-daytime-kwymB90JZTE?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+                      >Unsplash</a
+                    >
+                  </div>
+                </div>
+
+                <div class="card-body">
+                  <h5 class="card-title">Hand Signals</h5>
+                  <p class="card-text">
+                    <a
+                      class="card-link"
+                      href="https://caamagazine.com/on/safety/what-you-need-to-know-to-understand-cyclists-hand-signals"
+                      title="What you need to know to understand cyclists' hand signals.--CAA Magazine"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >article</a
+                    >
+                    <a
+                      href="https://youtu.be/q_-8CRvFDCI?si=WFwr5k5GdOPbqkOw"
+                      class="card-link"
+                      title="Hand Signals: Bike Safety in Under 3 Minutes --The Street Trust"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >video</a
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card: Saftey -->
+            <div class="col-md-6 col-lg-4">
+              <div id="safety" class="card md-3">
+                <div class="image-container">
+                  <img
+                    class="d-block w-100 rounded"
+                    src="/images/chip-vincent-kBVreEYUzp8-unsplash.jpg"
+                    alt="Photo by Chip Vincent on Unsplash"
+                  />
+                  <div class="image-credit">
+                    Photo by
+                    <a
+                      href="https://unsplash.com/@christinhumephoto?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+                      >Christin Hume</a
+                    >
+                    on
+                    <a
+                      href="https://unsplash.com/photos/shallow-focus-photography-of-bicycle-brake-lever-nbmBlJyiefg?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+                      >Unsplash</a
+                    >
+                  </div>
+                </div>
+
+                <div class="card-body">
+                  <h5 class="card-title">Safety Check</h5>
+                  <p class="card-text">
+                    <a
+                      class="card-link"
+                      href="https://youtu.be/8z7BNy3HwhU?si=sMU74A7U_DAdpDq1"
+                      title="Safety Check your Bike --Jen's Cycles"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >video</a
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- Card: seat -->
+            <div class="col-md-6 col-lg-4">
+              <div id="seat" class="card md-3">
+                <div class="image-container">
+                  <img
+                    class="d-block w-100 rounded"
+                    src="/images/tom-blum-_FmvjRbMurY-unsplash.jpg"
+                    alt="Photo by Tom Blum on Unsplash"
+                  />
+                  <div class="image-credit">
+                    Photo by
+                    <a
+                      href="https://unsplash.com/@tomblum?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+                      >Tom Blum</a
+                    >
+                    on
+                    <a
+                      href="https://unsplash.com/photos/a-close-up-of-a-mountain-bike-on-a-trail-_FmvjRbMurY?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+                      >Unsplash</a
+                    >
+                  </div>
+                </div>
+
+                <div class="card-body">
+                  <h5 class="card-title">Adjust the seat</h5>
+                  <p class="card-text">
+                    <a
+                      class="card-link"
+                      href="/images/2022_JETT_ASSEMBLY_GUIDE_ENGLISH.pdf#page=13"
+                      title="2022 Jett Assemply Guide: Adjusting the seatpost height"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >pdf</a
+                    >
+                    <a
+                      href="https://youtu.be/xrvMbdZsHr8?si=kW9SLwMtksQ-CPTq"
+                      class="card-link"
+                      title="How to adjust the saddle height on your child's bike --Evans Cycles"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >video</a
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- Card: tire -->
+            <div class="col-md-6 col-lg-4">
+              <div id="tire" class="card md-3">
+                <div class="image-container">
+                  <img
+                    class="d-block w-100 rounded"
+                    src="/images/designecologist-L_RIdsEyoxg-unsplash.jpg"
+                    alt="Photo by DESIGNECOLOGIST on Unsplash"
+                    caption="dsfdsf"
+                  />
+                  <div class="image-credit">
+                    Photo by
+                    <a
+                      href="https://unsplash.com/@designecologist?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+                      >DESIGNECOLOGIST</a
+                    >
+                    on
+                    <a
+                      href="https://unsplash.com/photos/black-bicycle-tire-with-rim-L_RIdsEyoxg?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+                      >Unsplash</a
+                    >
+                  </div>
+                </div>
+
+                <div class="card-body">
+                  <h5 class="card-title">Pump a Tire</h5>
+                  <p class="card-text">
+                    <a
+                      class="card-link"
+                      href="https://www.wikihow.com/Inflate-Bike-Tires#Schrader-Valve"
+                      title="How to Inflate Bike Tires: Schrader Valve --wikiHow & Chris Atkinson"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >article</a
+                    >
+                    <a
+                      href="https://www.youtube.com/watch?v=GxuKCefewio&ab_channel=Jen%27sCycles%28formerlyTheBicyclePlanet%29"
+                      class="card-link"
+                      title="How to inflate a Bicycle tire --Jen's Cycles"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >video</a
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card: Pop a wheelie -->
+            <div class="col-md-6 col-lg-4">
+              <div id="wheelie" class="card md-3">
+                <div class="image-container">
+                  <img
+                    class="d-block w-100 rounded"
+                    src="/images/clark-young-7YMQpD5R7Uw-unsplash.jpg"
+                    alt="Photo by Clark Young on Unsplash"
+                  />
+                  <div class="image-credit">
+                    Photo by
+                    <a
+                      href="https://unsplash.com/@cbyoung?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+                      >Clark Young</a
+                    >
+                    on
+                    <a
+                      href="https://unsplash.com/photos/silhouette-of-child-riding-on-bike-7YMQpD5R7Uw?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+                      >Unsplash</a
+                    >
+                  </div>
+                </div>
+
+                <div class="card-body">
+                  <h5 class="card-title">Pop a Wheelie</h5>
+                  <p class="card-text">
+                    <a
+                      class="card-link"
+                      href="https://www.wikihow.com/Inflate-Bike-Tires#Schrader-Valve"
+                      title="How to Inflate Bike Tires: Schrader Valve --wikiHow & Chris Atkinson"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >article</a
+                    >
+                    <a
+                      href="https://youtu.be/VmaVfJj03F0?si=SCN0AbPOWnmjjTiZ"
+                      class="card-link"
+                      title="Learn how to wheelie any bike now!! --Porter MTB"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >video</a
+                    >
+                    <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/VmaVfJj03F0?si=SCN0AbPOWnmjjTiZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- FOOTER -->
+      <footer class="bg-light py-3">
+        <div class="container d-flex justify-content-between">
+          <div>
+            <p>&copy; 2024 Jett Bike Crew. All Rights Reserved.</p>
+          </div>
+          <div>
+            <a
+              href="https://www.youtube.com/channel/UCcrBtxD8xy2cxeXM7f-xihA"
+              class="me-3"
+            >
+              <img
+                src="/images/youtube-123.png"
+                alt="YouTube button"
+                width="32"
+                height="32"
+              />
+            </a>
+            <a href="#top">top</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Link to external JS file -->
+    <script src="/scripts/map.js"></script>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
