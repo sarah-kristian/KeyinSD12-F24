@@ -95,10 +95,10 @@ function replaceTen(str) {
 
 function cleanUp(value) {
   return value
-  .replace(/\s\s+/g, ' ') // Replace multiple spaces with a single space
-  .replace(/"/g, "'")      // Replace double quotes with single quotes
-  .replace(/\(\s*/g, '(')  // Remove spaces after opening parenthesis
-  .replace(/\s*\)/g, ')'); // Remove spaces before closing parenthesis
+    .replace(/\s\s+/g, ' ') // Replace multiple spaces with a single space
+    .replace(/"/g, "'")      // Replace double quotes with single quotes
+    .replace(/\(\s*/g, '(')  // Remove spaces after opening parenthesis
+    .replace(/\s*\)/g, ')'); // Remove spaces before closing parenthesis
 };
 
 /*******************************************************************************
@@ -191,8 +191,64 @@ function fixPostalCode(postalCode) {
  * returns string- a province (short form by default, or long form if requested)
  ******************************************************************************/
 
-function toProvince(postalCode, useLongForm) {
-  // Replace this comment with your code...
+/* array of objects matching initial character of postal code to province code */
+let provCode = [
+  { regex: /^[KLMNP]/, province: "ON" },  // Ontario
+  { regex: /^[GHJ]/, province: "QC" },    // Quebec
+  { regex: /^B/, province: "NS" },       // Nova Scotia
+  { regex: /^E/, province: "NB" },       // New Brunswick
+  { regex: /^R/, province: "MB" },       // Manitoba
+  { regex: /^V/, province: "BC" },       // British Columbia
+  { regex: /^C/, province: "PE" },       // Prince Edward Island
+  { regex: /^S/, province: "SK" },       // Saskatchewan
+  { regex: /^T/, province: "AB" },       // Alberta
+  { regex: /^A/, province: "NL" },       // Newfoundland and Labrador
+  { regex: /^X/, province: "NT" },       // Nunavut, Northwest Territories
+  { regex: /^Y/, province: "YT" }        // Yukon
+];
+
+/* object matching province code to long form province name */
+let longForm = {
+  ON: "Ontario",
+  QC: "Quebec",
+  NS: "Nova Scotia",
+  NB: "New Brunswick",
+  MB: "Manitoba",
+  BC: "British Columbia",
+  PE: "Prince Edward Island",
+  SK: "Saskatchewan",
+  AB: "Alberta",
+  NL: "Newfoundland and Labrador",
+  NT: "Nunavut, Northwest Territories",
+  YT: "Yukon"
+};
+
+// Function to get province name
+function getLongForm(abbreviation) {
+  return longForm[abbreviation] || "Unknown province";
+}
+
+
+function getProvinceCode(postalCode) {
+  try {
+    postalCode = fixPostalCode(postalCode);
+  } catch (error) {
+    return null;
+  }
+
+
+  for (let item of provCode) {
+    if (item.regex.test(postalCode)) {
+      return item.province; // Directly return the province code when a match is found
+    }
+  }
+  return "Unknown province"; // Return "Unknown province" if no match is found
+}
+
+function toProvince(postalCode, useLongForm = false) {
+  let province = getProvinceCode(postalCode);
+  if (useLongForm === true) { province = getLongForm(province) };
+  return province;
 }
 
 /*******************************************************************************
@@ -208,7 +264,7 @@ function toProvince(postalCode, useLongForm) {
 
 function checkFirstChar(value) {
   const re = /^[A-Z]/
-  
+
   let message = (re.test(value)) ? "String's first character IS uppercase." : "String's first character is NOT uppercase.";
   console.log(message); // 
 }
