@@ -1,0 +1,178 @@
+/* General body styling */
+body {
+  background-color: black; /* Black background */
+  color: white; /* White text for better contrast */
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Container styling */
+.container {
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: white; /* White container for contrast */
+  border-radius: 10px;
+  border: 2px solid #ccc;
+  color: black; /* Black text for container content */
+}
+
+/* Header styling */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  font-size: 1.8em;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header button {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* Event List */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  background-color: #333; /* Dark background for event items */
+  color: white; /* White text for event items */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s;
+  counter-increment: event-counter; /* Enable numbering */
+}
+
+ul li:before {
+  content: counter(event-counter) ". "; /* Add numbering */
+  font-weight: bold;
+}
+
+/* Hover effect for selecting an event */
+ul li:hover {
+  background-color: #555; /* Slightly lighter background on hover */
+  cursor: pointer;
+}
+
+/* Event Details */
+.event-details {
+  border: 1px solid #ccc;
+  padding: 16px;
+  margin-top: 20px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  color: black; /* Black text for details */
+}
+
+.event-details h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.event-details p {
+  margin: 5px 0;
+}
+
+/* Button styling */
+.btn {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #006400; /* Darker green on hover */
+}
+
+.btn-block {
+  width: 100%;
+}
+
+.btn[style*="background-color: green"] {
+  background-color: #28a745; /* Green button */
+}
+
+.btn[style*="background-color: red"] {
+  background-color: #dc3545; /* Red button */
+}
+
+
+/* Form container */
+.add-form {
+  margin: 20px 0;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Form group styling */
+.form-control {
+  margin-bottom: 15px;
+}
+
+.form-control label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+.form-control input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  transition: border-color 0.3s;
+}
+
+.form-control input:focus {
+  border-color: #007bff; /* Blue border on focus */
+  outline: none;
+}
+
+/* Submit button */
+.btn-block {
+  background-color: #007bff; /* Blue background */
+  color: white;
+  padding: 10px;
+  font-size: 18px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s;
+}
+
+.btn-block:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+.btn-block:disabled {
+  background-color: #e0e0e0;
+  color: #888;
+  cursor: not-allowed;
+}
